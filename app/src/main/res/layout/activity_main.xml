@@ -7,37 +7,24 @@
     android:background="@android:color/black"
     tools:context="com.vihana.circlemenu.MainActivity">
 
-    <ImageButton
-        android:id="@+id/menuIB"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/roundcorner"
-        android:padding="15dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_menu_black_24dp" />
+
 
 
     <ImageButton
         android:id="@+id/homeIB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/roundcornerblue"
         android:padding="15dp"
         android:src="@drawable/ic_home_white_24dp"
-        app:layout_constraintBottom_toTopOf="@+id/menuIB"
-        app:layout_constraintEnd_toEndOf="@+id/menuIB"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/menuIB"
-        android:layout_marginRight="8dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <ImageButton
@@ -45,13 +32,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
-        android:layout_marginTop="8dp"
         android:background="@drawable/roundcorneryellow"
         android:padding="15dp"
         android:src="@drawable/ic_place_white_24dp"
         app:layout_constraintEnd_toStartOf="@+id/menuIB"
-        app:layout_constraintTop_toBottomOf="@+id/homeIB"
-        android:layout_marginRight="24dp" />
+        tools:layout_editor_absoluteY="135dp" />
 
 
     <ImageButton
@@ -59,13 +44,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="16dp"
         android:background="@drawable/roundcornergreen"
         android:padding="15dp"
         android:src="@drawable/ic_search_white_24dp"
         app:layout_constraintStart_toEndOf="@+id/menuIB"
-        app:layout_constraintTop_toBottomOf="@+id/homeIB"
-        android:layout_marginLeft="28dp" />
+        tools:layout_editor_absoluteY="143dp" />
 
     <ImageButton
         android:id="@+id/settingIB"
@@ -106,5 +89,19 @@
         <!--android:background="@drawable/roundcornerblue"-->
         <!--/>-->
 
-
+    <ImageButton
+        android:id="@+id/menuIB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundcorner"
+        android:padding="15dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_menu_black_24dp" />
 </android.support.constraint.ConstraintLayout>
