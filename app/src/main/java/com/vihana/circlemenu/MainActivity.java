@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
     }
 
-    ImageButton mMenuIB, mHomeIB, mLocationIB, mSearchIB, mSettingsIB, mNotificationIB;
+    ImageButton mMenuIB, mHomeIB, mLocationIB, mSearchIB, mSettingsIB, mNotificationIB, mCrossIB;
 
     private void initButtons() {
         findButtons();
@@ -53,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
         mSearchIB.setOnClickListener(mClickListener);
         mNotificationIB = findViewById(R.id.notificationIB);
         mNotificationIB.setOnClickListener(mClickListener);
+        mCrossIB= findViewById(R.id.crossIB);
+        mCrossIB.setOnClickListener(mClickListener);
     }
 
     private void hideButtons() {
@@ -71,13 +73,23 @@ public class MainActivity extends AppCompatActivity {
         mNotificationIB.setVisibility(View.VISIBLE);
     }
 
+    private void showCrossButtonIB(){
+        mMenuIB.setVisibility(View.GONE);
+    }
+
+    private void hideCrossButtonIB(){
+        mMenuIB.setVisibility(View.VISIBLE);
+//        mMenuIB.animate().alpha(1).scaleX(1).scaleY(1);
+//        mCrossIB.animate().scaleX(0).scaleY(0);
+    }
+
     private View.OnClickListener mClickListener = new View.OnClickListener() {
 
         @Override
         public void onClick(View view) {
             switch (view.getId()) {
                 case R.id.menuIB:
-                    onMenuIBClicked();
+                    onMenuOpened();
                     break;
 
                 case R.id.homeIB:
@@ -94,6 +106,10 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.locationIB:
                     onLocationIBClicked();
+                    break;
+
+                case R.id.crossIB:
+                    onMenuClosed();
                     break;
             }
         }
@@ -114,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void onMenuClosed() {
 //        hideButtons();
+        hideCrossButtonIB();
         hideHomeIB();
         hideSearchIB();
         hideLocationIB();
@@ -123,12 +140,17 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void onMenuOpened() {
+        showCrossButtonIB();
         showButtons();
         showHomeIB();
         showSearchIB();
         showLocationIB();
         showSettingsIB();
         showNotificationsIB();
+    }
+
+    private void dimMenu(){
+
     }
 
     private void showHomeIB() {
