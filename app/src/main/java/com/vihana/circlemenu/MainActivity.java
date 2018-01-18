@@ -115,6 +115,20 @@ public class MainActivity extends AppCompatActivity {
     private void onMenuClosed() {
 //        hideButtons();
         hideHomeIB();
+        hideSearchIB();
+        hideLocationIB();
+        hideSettingsIB();
+        hideNotificationsIB();
+    }
+
+
+    private void onMenuOpened() {
+        showButtons();
+        showHomeIB();
+        showSearchIB();
+        showLocationIB();
+        showSettingsIB();
+        showNotificationsIB();
     }
 
     private void showHomeIB() {
@@ -138,32 +152,146 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void hideHomeIB(){
-        AnimatorSet growSet = new AnimatorSet();
-        growSet.playTogether(
+        AnimatorSet shrinkSet = new AnimatorSet();
+        shrinkSet.playTogether(
                 ObjectAnimator.ofFloat(mHomeIB, "translationY", 0),
                 ObjectAnimator.ofFloat(mHomeIB, "scaleX",  1f,0),
                 ObjectAnimator.ofFloat(mHomeIB, "scaleY",  1f,0)
         );
+        shrinkSet.start();
+    }
+
+    private void showSearchIB() {
+        AnimatorSet growSet = new AnimatorSet();
+        growSet.playTogether(
+                ObjectAnimator.ofFloat(mSearchIB, "translationY", -250),
+                ObjectAnimator.ofFloat(mSearchIB, "translationX", 250),
+                ObjectAnimator.ofFloat(mSearchIB, "scaleX", 0, 1.2f),
+                ObjectAnimator.ofFloat(mSearchIB, "scaleY", 0, 1.2f)
+        );
         growSet.start();
 
-//        AnimatorSet shrinkSet = new AnimatorSet();
-//        shrinkSet.playTogether(
-//                ObjectAnimator.ofFloat(mHomeIB, "translationY", -350, -300),
-//                ObjectAnimator.ofFloat(mHomeIB, "scaleX", 1.2f, 1f),
-//                ObjectAnimator.ofFloat(mHomeIB, "scaleY", 1.2f, 1f)
-//        );
-//
-//        shrinkSet.setStartDelay(300);
-//        shrinkSet.start();
+        AnimatorSet shrinkSet = new AnimatorSet();
+        shrinkSet.playTogether(
+                ObjectAnimator.ofFloat(mSearchIB, "translationY", -250, -200),
+                ObjectAnimator.ofFloat(mSearchIB, "scaleX", 1.2f, 1f),
+                ObjectAnimator.ofFloat(mSearchIB, "scaleY", 1.2f, 1f)
+        );
+
+        shrinkSet.setStartDelay(300);
+        shrinkSet.start();
     }
 
-    private void onMenuOpened() {
-        showButtons();
-
-        showHomeIB();
-
-
+    private void hideSearchIB(){
+        AnimatorSet shrinkSet = new AnimatorSet();
+        shrinkSet.playTogether(
+                ObjectAnimator.ofFloat(mSearchIB, "translationY", 0),
+                ObjectAnimator.ofFloat(mSearchIB, "translationX", 0),
+                ObjectAnimator.ofFloat(mSearchIB, "scaleX",  1f,0),
+                ObjectAnimator.ofFloat(mSearchIB, "scaleY",  1f,0)
+        );
+        shrinkSet.start();
     }
+
+
+    private void showLocationIB() {
+        AnimatorSet growSet = new AnimatorSet();
+        growSet.playTogether(
+                ObjectAnimator.ofFloat(mLocationIB, "translationY", -250),
+                ObjectAnimator.ofFloat(mLocationIB, "translationX", -250),
+                ObjectAnimator.ofFloat(mLocationIB, "scaleX", 0, 1.2f),
+                ObjectAnimator.ofFloat(mLocationIB, "scaleY", 0, 1.2f)
+        );
+        growSet.start();
+
+        AnimatorSet shrinkSet = new AnimatorSet();
+        shrinkSet.playTogether(
+                ObjectAnimator.ofFloat(mLocationIB, "translationY", -250, -200),
+                ObjectAnimator.ofFloat(mLocationIB, "scaleX", 1.2f, 1f),
+                ObjectAnimator.ofFloat(mLocationIB, "scaleY", 1.2f, 1f)
+        );
+
+        shrinkSet.setStartDelay(300);
+        shrinkSet.start();
+    }
+
+    private void hideLocationIB(){
+        AnimatorSet shrinkSet = new AnimatorSet();
+        shrinkSet.playTogether(
+                ObjectAnimator.ofFloat(mLocationIB, "translationY", 0),
+                ObjectAnimator.ofFloat(mLocationIB, "translationX", 0),
+                ObjectAnimator.ofFloat(mLocationIB, "scaleX",  1f,0),
+                ObjectAnimator.ofFloat(mLocationIB, "scaleY",  1f,0)
+        );
+        shrinkSet.start();
+    }
+
+    private void showSettingsIB() {
+        AnimatorSet growSet = new AnimatorSet();
+        growSet.playTogether(
+                ObjectAnimator.ofFloat(mSettingsIB, "translationY", 250),
+                ObjectAnimator.ofFloat(mSettingsIB, "translationX", -250),
+                ObjectAnimator.ofFloat(mSettingsIB, "scaleX", 0, 1.2f),
+                ObjectAnimator.ofFloat(mSettingsIB, "scaleY", 0, 1.2f)
+        );
+        growSet.start();
+
+        AnimatorSet shrinkSet = new AnimatorSet();
+        shrinkSet.playTogether(
+                ObjectAnimator.ofFloat(mSettingsIB, "translationY", 250, 200),
+                ObjectAnimator.ofFloat(mSettingsIB, "scaleX", 1.2f, 1f),
+                ObjectAnimator.ofFloat(mSettingsIB, "scaleY", 1.2f, 1f)
+        );
+
+        shrinkSet.setStartDelay(300);
+        shrinkSet.start();
+    }
+
+    private void hideSettingsIB(){
+        AnimatorSet shrinkSet = new AnimatorSet();
+        shrinkSet.playTogether(
+                ObjectAnimator.ofFloat(mSettingsIB, "translationY", 0),
+                ObjectAnimator.ofFloat(mSettingsIB, "translationX", 0),
+                ObjectAnimator.ofFloat(mSettingsIB, "scaleX",  1f,0),
+                ObjectAnimator.ofFloat(mSettingsIB, "scaleY",  1f,0)
+        );
+        shrinkSet.start();
+    }
+
+
+    private void showNotificationsIB() {
+        AnimatorSet growSet = new AnimatorSet();
+        growSet.playTogether(
+                ObjectAnimator.ofFloat(mNotificationIB, "translationY", 250),
+                ObjectAnimator.ofFloat(mNotificationIB, "translationX", 250),
+                ObjectAnimator.ofFloat(mNotificationIB, "scaleX", 0, 1.2f),
+                ObjectAnimator.ofFloat(mNotificationIB, "scaleY", 0, 1.2f)
+        );
+        growSet.start();
+
+        AnimatorSet shrinkSet = new AnimatorSet();
+        shrinkSet.playTogether(
+                ObjectAnimator.ofFloat(mNotificationIB, "translationY", 250, 200),
+                ObjectAnimator.ofFloat(mNotificationIB, "scaleX", 1.2f, 1f),
+                ObjectAnimator.ofFloat(mNotificationIB, "scaleY", 1.2f, 1f)
+        );
+
+        shrinkSet.setStartDelay(300);
+        shrinkSet.start();
+    }
+
+    private void hideNotificationsIB(){
+        AnimatorSet shrinkSet = new AnimatorSet();
+        shrinkSet.playTogether(
+                ObjectAnimator.ofFloat(mNotificationIB, "translationY", 0),
+                ObjectAnimator.ofFloat(mNotificationIB, "translationX", 0),
+                ObjectAnimator.ofFloat(mNotificationIB, "scaleX",  1f,0),
+                ObjectAnimator.ofFloat(mNotificationIB, "scaleY",  1f,0)
+        );
+        shrinkSet.start();
+    }
+
+
 
     private void onHomeIBClicked() {
 

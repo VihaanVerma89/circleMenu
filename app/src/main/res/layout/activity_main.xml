@@ -31,54 +31,67 @@
         android:id="@+id/locationIB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/roundcorneryellow"
         android:padding="15dp"
         android:src="@drawable/ic_place_white_24dp"
-        app:layout_constraintEnd_toStartOf="@+id/menuIB"
-        tools:layout_editor_absoluteY="135dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <ImageButton
         android:id="@+id/searchIB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/roundcornergreen"
         android:padding="15dp"
         android:src="@drawable/ic_search_white_24dp"
-        app:layout_constraintStart_toEndOf="@+id/menuIB"
-        tools:layout_editor_absoluteY="143dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/settingIB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/roundcornerpurple"
         android:padding="15dp"
         android:src="@drawable/ic_settings_white_24dp"
-        app:layout_constraintEnd_toStartOf="@+id/menuIB"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/locationIB"
-        app:layout_constraintTop_toBottomOf="@+id/locationIB" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498" />
 
     <ImageButton
         android:id="@+id/notificationIB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/roundcornerred"
         android:padding="15dp"
         android:src="@drawable/ic_notifications_white_24dp"
-        app:layout_constraintEnd_toEndOf="@+id/searchIB"
-        app:layout_constraintHorizontal_bias="0.166"
-        app:layout_constraintStart_toEndOf="@+id/menuIB"
-        app:layout_constraintTop_toBottomOf="@+id/searchIB" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!--<ImageButton-->
         <!--android:id="@+id/homeIB"-->
