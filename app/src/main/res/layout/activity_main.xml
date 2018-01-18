@@ -8,7 +8,7 @@
     tools:context="com.vihana.circlemenu.MainActivity">
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/menuIB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/roundcorner"
@@ -22,4 +22,89 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_menu_black_24dp" />
+
+
+    <ImageButton
+        android:id="@+id/homeIB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="44dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/roundcornerblue"
+        android:padding="15dp"
+        android:src="@drawable/ic_home_white_24dp"
+        app:layout_constraintBottom_toTopOf="@+id/menuIB"
+        app:layout_constraintEnd_toEndOf="@+id/menuIB"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/menuIB"
+        android:layout_marginRight="8dp" />
+
+
+    <ImageButton
+        android:id="@+id/locationIB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/roundcorneryellow"
+        android:padding="15dp"
+        android:src="@drawable/ic_place_white_24dp"
+        app:layout_constraintEnd_toStartOf="@+id/menuIB"
+        app:layout_constraintTop_toBottomOf="@+id/homeIB"
+        android:layout_marginRight="24dp" />
+
+
+    <ImageButton
+        android:id="@+id/searchIB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/roundcornergreen"
+        android:padding="15dp"
+        android:src="@drawable/ic_search_white_24dp"
+        app:layout_constraintStart_toEndOf="@+id/menuIB"
+        app:layout_constraintTop_toBottomOf="@+id/homeIB"
+        android:layout_marginLeft="28dp" />
+
+    <ImageButton
+        android:id="@+id/settingIB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/roundcornerpurple"
+        android:padding="15dp"
+        android:src="@drawable/ic_settings_white_24dp"
+        app:layout_constraintEnd_toStartOf="@+id/menuIB"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/locationIB"
+        app:layout_constraintTop_toBottomOf="@+id/locationIB" />
+
+    <ImageButton
+        android:id="@+id/notificationIB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/roundcornerred"
+        android:padding="15dp"
+        android:src="@drawable/ic_notifications_white_24dp"
+        app:layout_constraintEnd_toEndOf="@+id/searchIB"
+        app:layout_constraintHorizontal_bias="0.166"
+        app:layout_constraintStart_toEndOf="@+id/menuIB"
+        app:layout_constraintTop_toBottomOf="@+id/searchIB" />
+
+    <!--<ImageButton-->
+        <!--android:id="@+id/homeIB"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:src="@drawable/ic_home_white_24dp"-->
+        <!--android:padding="15dp"-->
+        <!--android:background="@drawable/roundcornerblue"-->
+        <!--/>-->
+
+
 </android.support.constraint.ConstraintLayout>
