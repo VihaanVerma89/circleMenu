@@ -17,6 +17,7 @@ import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final int mRadius = 300;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -185,17 +186,26 @@ public class MainActivity extends AppCompatActivity {
 
     private void showSearchIB() {
         AnimatorSet growSet = new AnimatorSet();
+        float x = (float) (mRadius* Math.cos(Math.toRadians(18)));
+        // y is negative in fist quadrant as translation.
+        float y = (float) (mRadius*Math.sin(Math.toRadians(18))) * -1;
+
         growSet.playTogether(
-                ObjectAnimator.ofFloat(mSearchIB, "translationY", -250),
-                ObjectAnimator.ofFloat(mSearchIB, "translationX", 250),
+//                ObjectAnimator.ofFloat(mSearchIB, "translationY", -250),
+                ObjectAnimator.ofFloat(mSearchIB, "translationY", y),
+//                ObjectAnimator.ofFloat(mSearchIB, "translationX", 250),
+                ObjectAnimator.ofFloat(mSearchIB, "translationX", x),
                 ObjectAnimator.ofFloat(mSearchIB, "scaleX", 0, 1.2f),
                 ObjectAnimator.ofFloat(mSearchIB, "scaleY", 0, 1.2f)
         );
         growSet.start();
 
+        float xfinal = (float) (x * 0.95);
+        float yfinal = (float) (y*0.95);
         AnimatorSet shrinkSet = new AnimatorSet();
         shrinkSet.playTogether(
-                ObjectAnimator.ofFloat(mSearchIB, "translationY", -250, -200),
+                ObjectAnimator.ofFloat(mSearchIB, "translationY", y, yfinal),
+                ObjectAnimator.ofFloat(mSearchIB, "translationX", x, xfinal),
                 ObjectAnimator.ofFloat(mSearchIB, "scaleX", 1.2f, 1f),
                 ObjectAnimator.ofFloat(mSearchIB, "scaleY", 1.2f, 1f)
         );
@@ -218,17 +228,24 @@ public class MainActivity extends AppCompatActivity {
 
     private void showLocationIB() {
         AnimatorSet growSet = new AnimatorSet();
+        float x = (float) (mRadius* Math.cos(Math.toRadians(18))) * -1;
+        // y is negative in fist quadrant as translation.
+        float y = (float) (mRadius*Math.sin(Math.toRadians(18))) * -1;
+
         growSet.playTogether(
-                ObjectAnimator.ofFloat(mLocationIB, "translationY", -250),
-                ObjectAnimator.ofFloat(mLocationIB, "translationX", -250),
+                ObjectAnimator.ofFloat(mLocationIB, "translationY", y),
+                ObjectAnimator.ofFloat(mLocationIB, "translationX", x),
                 ObjectAnimator.ofFloat(mLocationIB, "scaleX", 0, 1.2f),
                 ObjectAnimator.ofFloat(mLocationIB, "scaleY", 0, 1.2f)
         );
         growSet.start();
 
+        float xfinal = (float) (x * 0.95);
+        float yfinal = (float) (y*0.95);
         AnimatorSet shrinkSet = new AnimatorSet();
         shrinkSet.playTogether(
-                ObjectAnimator.ofFloat(mLocationIB, "translationY", -250, -200),
+                ObjectAnimator.ofFloat(mLocationIB, "translationY", y, yfinal),
+                ObjectAnimator.ofFloat(mLocationIB, "translationX", x, xfinal),
                 ObjectAnimator.ofFloat(mLocationIB, "scaleX", 1.2f, 1f),
                 ObjectAnimator.ofFloat(mLocationIB, "scaleY", 1.2f, 1f)
         );
@@ -250,17 +267,24 @@ public class MainActivity extends AppCompatActivity {
 
     private void showSettingsIB() {
         AnimatorSet growSet = new AnimatorSet();
+        // 3rd quadrant has x negative.
+        float x = (float) (mRadius* Math.sin(Math.toRadians(36))) * -1;
+        float y = (float) (mRadius*Math.cos(Math.toRadians(36)));
         growSet.playTogether(
-                ObjectAnimator.ofFloat(mSettingsIB, "translationY", 250),
-                ObjectAnimator.ofFloat(mSettingsIB, "translationX", -250),
+                ObjectAnimator.ofFloat(mSettingsIB, "translationY", y),
+                ObjectAnimator.ofFloat(mSettingsIB, "translationX",x),
                 ObjectAnimator.ofFloat(mSettingsIB, "scaleX", 0, 1.2f),
                 ObjectAnimator.ofFloat(mSettingsIB, "scaleY", 0, 1.2f)
         );
         growSet.start();
 
+        float xfinal = (float) (x * 0.95);
+        float yfinal = (float) (y*0.95);
+
         AnimatorSet shrinkSet = new AnimatorSet();
         shrinkSet.playTogether(
-                ObjectAnimator.ofFloat(mSettingsIB, "translationY", 250, 200),
+                ObjectAnimator.ofFloat(mSettingsIB, "translationY", yfinal),
+                ObjectAnimator.ofFloat(mSettingsIB, "translationX",xfinal),
                 ObjectAnimator.ofFloat(mSettingsIB, "scaleX", 1.2f, 1f),
                 ObjectAnimator.ofFloat(mSettingsIB, "scaleY", 1.2f, 1f)
         );
@@ -283,17 +307,25 @@ public class MainActivity extends AppCompatActivity {
 
     private void showNotificationsIB() {
         AnimatorSet growSet = new AnimatorSet();
+        float x = (float) (mRadius* Math.sin(Math.toRadians(36)));
+        float y = (float) (mRadius*Math.cos(Math.toRadians(36)));
+
         growSet.playTogether(
-                ObjectAnimator.ofFloat(mNotificationIB, "translationY", 250),
-                ObjectAnimator.ofFloat(mNotificationIB, "translationX", 250),
+                ObjectAnimator.ofFloat(mNotificationIB, "translationX", x),
+                ObjectAnimator.ofFloat(mNotificationIB, "translationY",y),
                 ObjectAnimator.ofFloat(mNotificationIB, "scaleX", 0, 1.2f),
                 ObjectAnimator.ofFloat(mNotificationIB, "scaleY", 0, 1.2f)
         );
         growSet.start();
 
+
+        float xfinal = (float) (x * 0.95);
+        float yfinal = (float) (y*0.95);
+
         AnimatorSet shrinkSet = new AnimatorSet();
         shrinkSet.playTogether(
-                ObjectAnimator.ofFloat(mNotificationIB, "translationY", 250, 200),
+                ObjectAnimator.ofFloat(mNotificationIB, "translationX", x, xfinal),
+                ObjectAnimator.ofFloat(mNotificationIB, "translationY", y, yfinal),
                 ObjectAnimator.ofFloat(mNotificationIB, "scaleX", 1.2f, 1f),
                 ObjectAnimator.ofFloat(mNotificationIB, "scaleY", 1.2f, 1f)
         );
